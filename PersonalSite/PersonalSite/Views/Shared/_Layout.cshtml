@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PersonalSite</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+</head>
+<body>
+    <img class="nameHead" src="~/images/MenuName.png"/>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <br />
+            <div >
+                <ul class="contactBar">
+                    <li>
+                        <a href="https://www.linkedin.com/in/cbseirani/"><img class="conImage" src="~/images/linkedin-icon.png" /></a>
+                    </li>
+                    <li>
+                        <a href="https://stackexchange.com/users/10553252/chrisb"><img class="conImage" src="~/images/stacko_icon.jpg" /></a>
+                    </li>
+                    <li>
+                        <a href="http://steamcommunity.com/id/crispyfoo"><img class="conImage" src="~/images/Steam.png" /></a>
+                    </li>
+                </ul>
+            </div>
+            <br /><br /><br />
+            <div class="sourceLink">
+                <a href="https://github.com/cbseirani/CoreSite" style="text-align: center;">
+                    Find my site's source here:
+                    <img class="gitIcon" src="~/images/Git_Logo.png" />
+                </a>
+                <br />
+                &copy; 2018 || Chris Bseirani
+            </div>
+            
+        </footer>
+    </div>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
